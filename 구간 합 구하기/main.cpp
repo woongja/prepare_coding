@@ -1,14 +1,24 @@
-//
-//  main.cpp
-//  구간 합 구하기
-//
-//  Created by 이웅재 on 2023/05/23.
-//
-
 #include <iostream>
+#include <string>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+using namespace std;
+
+int main(){
+    
+    int N=0,M=0;
+    int S[10001] = {};
+    cin >> N >> M;
+    for(int i=1; i<=N; i++){
+        int temp;
+        cin >> temp;
+        S[i] = S[i-1] + temp;
+    }
+    
+    for(int i=0; i<M; i++){
+        int start, end;
+        cin >> start >> end;
+        cout << S[end] - S[start-1] << endl;
+    }
+    
+    
 }
